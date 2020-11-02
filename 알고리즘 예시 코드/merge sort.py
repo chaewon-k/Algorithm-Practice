@@ -39,3 +39,37 @@ for t in range(1, T+1):
     arr = list(map(int, input().split()))
     arr = divide(arr)
     print(f'#{t} {arr}')
+
+
+########### 더 빠른 merge sort ##############
+
+def merge_sort(l):
+    leng = len(l)
+    if leng == 1:
+        return l[:]
+    center = leng // 2
+    a = merge_sort(l[:center])
+    b = merge_sort(l[center:])
+
+    i = j = 0
+    merg = []
+    for _ in range(leng):
+        if a[i] <= b[j]:
+            merg.append(a[i])
+            i += 1
+            if i == leng // 2:
+                merg += b[j:]
+                break
+        else:
+            merg.append(b[j])
+            j += 1
+            if j == (leng + 1) // 2:
+                merg += a[i:]
+                break
+    return merg
+
+
+for tc in range(1, int(input()) + 1):
+    N = int(input())
+    l = list(map(int, input().split()))
+    print(f'#{tc}', merge_sort(l)[N // 2])
