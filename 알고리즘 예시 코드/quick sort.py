@@ -1,28 +1,27 @@
-def qsort(Arr, l, h):
-    if l < h:
-        Arr, p = partition(Arr,l,h)
-        qsort(Arr, 1, p-1)
-        qsort(Arr, p+1, h)
+def qsort(A, l, r):
+    if l < r:
+        p = partition(A, l, r)
+        qsort(A, l, p - 1)
+        qsort(A, p + 1, r)
 
-def partition(Arr, l, h):
-    pivot = Arr[l]
-    i,j = l,h
-    while i<=j:
-        while Arr[i]<=pivot and i<h:
-            i+=1
-        while Arr[j]>=pivot and j>l:
-            j-=1
-        if i<j:
-            Arr[i], Arr[j] = Arr[j], Arr[i]
-    Arr[l], Arr[j] = Arr[j], Arr[l]
-    return Arr,j
+def partition(A, l, r):
+    p = A[l]
+    i, j = l, r
+    while i <= j:
+        while A[i] <= p:
+            i += 1
+        while A[j] >= p:
+            j -= 1
+        if i < j:   A[i], A[j] = A[j], A[i]
+    A[l], A[j] = A[j], A[l]
+    return j
 
 Arr = [3,4,5,2,8,1]
 qsort(Arr, 0, 5)
 print(Arr)
-
-
-
+#
+#
+#
 # def quicksort(A):
 #     if len(A) <= 1:
 #         return A
