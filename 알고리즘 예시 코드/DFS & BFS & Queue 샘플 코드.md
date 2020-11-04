@@ -149,7 +149,7 @@ def BFS(v):
 #### (1) 인접 리스트를 이용한 BFS (방향 없는 그래프)
 
 ```python
-def dfs(v):
+def bfs(v):
     Q = []
     visit = [0] * (V+1)
     Q.append(v)
