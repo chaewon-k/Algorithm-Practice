@@ -9,9 +9,9 @@ def dijkstra(start,End):
         min_dist = heappop(queue)   # 현재 위치로부터 가장 가까운 노드. min_dist = [거리,도착점]
         if min_dist[1] == End:
             break
-        for end in graph[min_dist[1]]: # 가장 가까운 노드와 연결된 모든 end 중
-            if dist[end[0]] > min_dist[0] + end[1]: # min_dist를 거치는게 end로 바로 가는 것보다 효율적이면
-                dist[end[0]] = min_dist[0] + end[1]  # 거리 갱신 & 저장
+        for end in graph[min_dist[1]]:
+            if dist[end[0]] > min_dist[0] + end[1]:
+                dist[end[0]] = min_dist[0] + end[1]
                 heappush(queue, [dist[end[0]], end[0]])
     return dist
 
