@@ -138,10 +138,10 @@ def BFS(v):
         v = Q.pop(0)
         #v의 인접한 정점(w), 방문 안한 정점이면
             for w in range(1, V+1):
-            if G[v][w] == 1 and visit[w] == 0:
-                Q.append(w)
-                visit[w] = 1
-                print(w, end = " ")
+                if G[v][w] == 1 and visit[w] == 0:
+                    Q.append(w)
+                    visit[w] = 1
+                    print(w, end = " ")
 ```
 
 
