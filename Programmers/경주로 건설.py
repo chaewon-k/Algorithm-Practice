@@ -21,7 +21,7 @@ def dfs(start, prev, N, board, count):
 
 def solution(board):
     N = len(board)
-    count = [[float('inf')] * N for _ in range(N)]
+    count = [[100000000] * N for _ in range(N)]
     count[0][0] = 0
     dfs([0,0],[0,0],N,board,count)
 
