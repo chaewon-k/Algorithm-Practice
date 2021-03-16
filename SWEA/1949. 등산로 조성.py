@@ -1,4 +1,4 @@
-def f(i, j, c, s, N, K):  # i j좌표, pre 이전 칸 높이, l 이전칸까지 등산로 길이, c 남은 깎음 횟수
+def f(i, j, c, s, N, K):  # i j좌표, c 남은 깎음 횟수, s 현재 등산로 길이
     global maxV
     if maxV < s + 1:  # 등산로 길이 갱신
         maxV = s + 1
