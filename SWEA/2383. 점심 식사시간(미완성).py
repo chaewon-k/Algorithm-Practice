@@ -24,4 +24,22 @@ for t in range(T):
     print(comb)
 
     for com in comb:
-        
+        stair_1 = []
+        stair_2 = []
+        for c in range(len(com)):
+            if com[c] == 0:
+                stair_1.append(dists[c][0])
+            else:
+                stair_2.append(dists[c][1])
+        stair_1.sort()
+        stair_2.sort()
+
+        queue = []
+        while stair_1:
+            if len(queue) == 3:
+                if queue[2] == stair_1[0]:
+
+            else:
+                queue.append(stair_1.pop(0))
+
+
